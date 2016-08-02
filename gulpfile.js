@@ -12,5 +12,21 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    // mix.sass('app.scss');
+
+    mix.styles([
+    	'../dist/bootstrap/css/bootstrap.css',
+    	'../dist/AdminLTE/css/AdminLTE.css',
+    	'../dist/AdminLTE/css/skins/_all-skins.css',
+    	'../dist/font-awesome/css/font-awesome.css'
+	]);
+
+	mix.copy('resources/assets/dist/font-awesome/fonts/', 'public/fonts/');
+	mix.copy('resources/assets/dist/bootstrap/fonts/', 'public/fonts/');
+
+	mix.scripts([
+		'../dist/jQuery/jquery-2.2.3.min.js',
+		'../dist/bootstrap/js/bootstrap.js',
+		'../dist/AdminLTE/js/app.js'
+	]);
 });
